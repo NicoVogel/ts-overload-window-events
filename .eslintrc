@@ -1,21 +1,25 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true,
+    "mocha": true
+  },
+  "extends": ["prettier", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:@typescript-eslint/recommended"],
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
+  "plugins": ["@typescript-eslint", "promise", "import", "prettier"],
   "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "no-duplicate-imports": "error",
     "semi": ["error", "always"],
-    "quotes": ["error", "double"],
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": 1,
-    "@typescript-eslint/no-inferrable-types": [
-      "warn",
-      {
-        "ignoreParameters": true
-      }
-    ],
-    "@typescript-eslint/no-unused-vars": "warn"
+    "space-before-function-paren": ["error", "never"],
+    "dot-notation": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/ban-types": "warn"
   }
 }
